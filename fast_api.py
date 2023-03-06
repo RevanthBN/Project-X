@@ -33,4 +33,5 @@ async def query_OpenAI(input: User_input):
     result_stats = dict((k, response[k]) for k in ['id', 'object','created','model','usage']
             if k in response)
     text_out = response.choices[0].text
+    print(text_out)
     return JSONResponse(content={'stats': result_stats, 'output': text_out, 'detail': "Successful"})
