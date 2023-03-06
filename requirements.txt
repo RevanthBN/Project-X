@@ -1,0 +1,6 @@
+openai
+streamlit
+streamlit_chat
+emoji
+fastapi
+uvicorn[standard]
