@@ -66,7 +66,7 @@ def construct_prompt(action, tone, input_text):
         add_tone = "Now add a {} tone to the written text.".format(tone)
         prompts = [prompt+ 'Text: \n"{}" \n'.format(input_text) + add_tone for prompt in prompts_all]
     else:
-        prompts = [prompt+ 'Text: \n"{}" \n'.format(input_text) + add_tone for prompt in prompts_all]
+        prompts = [prompt+ 'Text: \n"{}" \n'.format(input_text) for prompt in prompts_all]
     return prompts
     
 # Some html formatting of the background
