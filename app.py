@@ -123,12 +123,11 @@ submit = st.button('Let the magic begin! 🪄')
 
 if submit:
     try:
-        st.header("Results generated: 😎")
         prompts=construct_prompt(action=set_action,tone=set_tone,input_text=input)
         for idx, prompt in enumerate(prompts):
             inputs = {"prompt":prompt,"key":st.secrets["OPENAI_API_KEY"]}
             response = requests.post(url="https://openai-endpoint.onrender.com/query",data=json.dumps(inputs))
-            st.write('**{}**'.format(result_header[idx]))
+            st.header('**{} 😎**'.format(result_header[idx]))
             st.write(response.json()['output'].strip())
         
         if show_stats:
